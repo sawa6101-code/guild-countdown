@@ -1,0 +1,11 @@
+{
+  "name":"Guild Countdown",
+  "short_name":"Guild Countdown",
+  "description":"ギルドイベントの開始までをリアルタイム表示するカウントダウンPWA",
+  "start_url":"./",
+  "display":"standalone",
+  "background_color":"#080d18",
+  "theme_color":"#111827",
+  "lang":"ja",
+  "icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
