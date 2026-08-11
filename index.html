@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="ギルドイベントの開始までをリアルタイムで表示するカウントダウンPWA">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <title>Guild Countdown</title>
+</head>
+<body>
+  <main class="app">
+    <header class="hero">
+      <div class="badge">GUILD EVENT</div>
+      <h1>Guild Countdown</h1>
+      <p>イベント開始までの時間をリアルタイムでカウントダウン</p>
+    </header>
+
+    <section class="card countdown-card" aria-live="polite">
+      <div class="event-title" id="eventTitleView">次のギルドイベント</div>
+      <div class="target" id="targetView">日時を設定してください</div>
+      <div class="countdown" id="countdown">
+        <div class="time-box"><strong id="days">--</strong><span>日</span></div>
+        <div class="time-box"><strong id="hours">--</strong><span>時間</span></div>
+        <div class="time-box"><strong id="minutes">--</strong><span>分</span></div>
+        <div class="time-box"><strong id="seconds">--</strong><span>秒</span></div>
+      </div>
+      <div class="status" id="status">イベント日時を入力してください</div>
+    </section>
+
+    <section class="card settings">
+      <h2>イベント設定</h2>
+      <label>イベント名
+        <input id="eventTitle" type="text" maxlength="40" placeholder="例：ギルド戦 開始">
+      </label>
+      <label>開催日時
+        <input id="eventDate" type="datetime-local">
+      </label>
+      <div class="actions">
+        <button class="primary" id="saveBtn">保存する</button>
+        <button class="secondary" id="resetBtn">リセット</button>
+      </div>
+    </section>
+
+    <section class="card quick">
+      <h2>クイック設定</h2>
+      <div class="quick-grid">
+        <button data-minutes="10">10分後</button>
+        <button data-minutes="30">30分後</button>
+        <button data-minutes="60">1時間後</button>
+        <button data-minutes="180">3時間後</button>
+      </div>
+    </section>
+
+    <footer>Guild Countdown · PWA · 設定はこの端末に保存されます</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
